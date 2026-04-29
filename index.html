@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)file:///D:/index_1.html -->
+<html lang="it"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panta Rei - Mirabilandia Volley Cup 2026</title>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family: Arial, sans-serif; background: #f0f2f5; color: #222; font-size: 14px; }
+
+.hero { background: #1A3A6E; padding: 20px 16px 16px; text-align: center; }
+.hero h1 { font-size: 22px; font-weight: 900; color: #fff; text-transform: uppercase; line-height: 1.15; }
+.hero h1 span { color: #F5C518; }
+.hero p { margin-top: 5px; font-size: 11px; color: rgba(255,255,255,0.65); }
+.hero .upd { margin-top: 4px; font-size: 10px; color: #F5C518; }
+
+.page { padding: 12px; }
+
+.day { margin-top: 16px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.day h2 { font-size: 13px; font-weight: 900; color: #1A3A6E; text-transform: uppercase; letter-spacing: 0.5px; }
+.day-line { flex: 1; height: 1.5px; background: #1A3A6E; opacity: 0.2; }
+
+/* CARD GARA */
+.mc { background: #fff; border-radius: 10px; overflow: hidden; margin-bottom: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+.mc-top { display: flex; align-items: stretch; }
+.mc-strip { width: 4px; flex-shrink: 0; }
+.mc-strip.u13 { background: #1565C0; }
+.mc-strip.u15 { background: #7B1FA2; }
+.mc-strip.u17 { background: #2E7D32; }
+.mc-time { background: #EEF4FD; padding: 10px 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 50px; flex-shrink: 0; }
+.mc-time .ora { font-size: 17px; font-weight: 900; color: #1A3A6E; line-height: 1; }
+.mc-time .cat { margin-top: 4px; font-size: 10px; font-weight: 700; color: #fff; padding: 2px 5px; border-radius: 8px; }
+.mc-time .cat.u13 { background: #1565C0; }
+.mc-time .cat.u15 { background: #7B1FA2; }
+.mc-time .cat.u17 { background: #2E7D32; }
+.mc-info { padding: 9px 10px; flex: 1; }
+.mc-vs { font-weight: 700; font-size: 13px; color: #111; }
+.mc-vs b { color: #2B5BB4; }
+.mc-vs .tbd { color: #E65100; font-style: italic; font-weight: 600; }
+.mc-detail { font-size: 11px; color: #666; margin-top: 4px; line-height: 1.5; }
+.mc-detail b { color: #333; font-weight: 700; }
+.mc-ris { display: inline-block; margin-top: 4px; font-size: 11px; font-weight: 700; color: #1B5E20; background: #E8F5E9; padding: 2px 8px; border-radius: 4px; }
+.mc-nota-lib { padding: 7px 10px; font-size: 11px; background: #F3E5F5; color: #4A148C; border-top: 1px solid #E1BEE7; }
+
+/* ALERT */
+.alert { border-radius: 10px; padding: 10px 13px; margin-bottom: 6px; color: #fff; }
+.alert.danger { background: #C62828; }
+.alert.warning { background: #E65100; }
+.alert b { font-size: 13px; display: block; margin-bottom: 2px; }
+.alert span { font-size: 11px; opacity: 0.9; }
+
+/* TRANSFER */
+.tr { border-radius: 8px; padding: 8px 12px; margin-bottom: 6px; font-size: 11px; font-weight: 600; }
+.tr.ok { background: #E8F5E9; color: #1B5E20; border: 1px solid #A5D6A7; }
+.tr.warn { background: #FFF3E0; color: #E65100; border: 1px solid #FFCC80; }
+
+/* REGOLAMENTO */
+.reg { background: #fff; border-radius: 10px; overflow: hidden; margin-bottom: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.reg-hdr { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f8f9fa; border-bottom: 1px solid #eee; }
+.reg-hdr .cat-name { font-weight: 700; font-size: 13px; color: #1A3A6E; }
+.pill { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 20px; font-weight: 700; font-size: 11px; color: #fff; }
+.pill.u13 { background: #1565C0; } .pill.u15 { background: #7B1FA2; } .pill.u17 { background: #2E7D32; }
+.reg-row { display: flex; padding: 6px 12px; border-bottom: 1px solid #f0f0f0; font-size: 11px; }
+.reg-row:last-child { border-bottom: none; }
+.reg-row:nth-child(even) { background: #fafafa; }
+.reg-row .rk { font-weight: 700; color: #1A3A6E; min-width: 85px; flex-shrink: 0; }
+
+/* RIEPILOGO */
+.summ { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.sr { padding: 9px 12px; border-bottom: 1px solid #f0f0f0; font-size: 11px; }
+.sr:last-child { border-bottom: none; }
+.sr.d { background: #FFEBEE; } .sr.w { background: #FFF3E0; } .sr.n { background: #FFF8E1; }
+.sr .st { font-size: 13px; font-weight: 900; margin-bottom: 2px; }
+.sr.d .st { color: #C62828; } .sr.w .st { color: #E65100; } .sr.n .st { color: #795548; }
+.sr .sd { font-size: 10px; color: #999; font-weight: 700; }
+.sr .sp { font-weight: 700; color: #333; margin-bottom: 1px; }
+.sr .ss { color: #888; }
+
+.tip { background: #FFFBEA; border: 1.5px solid #F5C518; border-radius: 10px; padding: 10px 13px; font-size: 12px; color: #5D4037; margin-bottom: 8px; }
+
+.section-title { background: #2B5BB4; color: #fff; border-radius: 10px; padding: 8px 13px; margin-bottom: 8px; }
+.section-title h2 { font-size: 14px; font-weight: 900; text-transform: uppercase; }
+.section-title p { font-size: 11px; opacity: 0.75; margin-top: 2px; }
+
+.footer { text-align: center; font-size: 10px; color: #aaa; padding: 16px 12px 24px; line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>PANTA REI<br><span>FAGANNO OLONA</span></h1>
+  <p>Mirabilandia Volley Cup 2026 · 30 Apr – 2 Mag</p>
+  <p class="upd">Aggiornato: 29/04/2026</p>
+</div>
+
+<div class="page">
+
+<!-- ══ REGOLAMENTO ══════════════════════════════════════ -->
+<div class="day"><h2>Regolamento</h2><div class="day-line"></div></div>
+
+<div class="tip">💡 <strong>Non mollare mai nel 3° set!</strong> Perdere 2-1 vale 1 punto in classifica.</div>
+
+<div class="reg">
+  <div class="reg-hdr"><span class="pill u13">U13</span><span class="cat-name">Under 13 — Nati 2013-2016 — Rete 2,15 m</span></div>
+  <div class="reg-row"><span class="rk">1a Fase</span><span>2 gironi da 3 sqd. · sola andata</span></div>
+  <div class="reg-row"><span class="rk">2a Fase</span><span>Quarti → Semifinali → Finali 5°/3°/1°</span></div>
+</div>
+
+<div class="reg">
+  <div class="reg-hdr"><span class="pill u15">U15</span><span class="cat-name">Under 15 — Nati 2011-2014 — Rete 2,35 m</span></div>
+  <div class="reg-row"><span class="rk">1a Fase</span><span>2 gironi da 4 sqd. · sola andata</span></div>
+  <div class="reg-row"><span class="rk">2a Fase</span><span>Semif. (1°-4°) e (5°-8°) → Finali</span></div>
+</div>
+
+<div class="reg">
+  <div class="reg-hdr"><span class="pill u17">U17</span><span class="cat-name">Under 17 — Nati 2009-2013 — Rete 2,43 m</span></div>
+  <div class="reg-row"><span class="rk">1a Fase</span><span>Girone unico 4 sqd. · sola andata</span></div>
+  <div class="reg-row"><span class="rk">2a Fase</span><span>Finale 3° posto · Finale 1° posto</span></div>
+</div>
+
+<div class="reg">
+  <div class="reg-row"><span class="rk">Vittoria 2-0</span><span>3 pt vincitrice · 0 pt perdente</span></div>
+  <div class="reg-row"><span class="rk">Vittoria 2-1</span><span>2 pt vincitrice · 1 pt perdente</span></div>
+</div>
+
+
+<!-- ══ GIOVEDI ══════════════════════════════════════════ -->
+<div class="day" style="margin-top:20px"><h2>Giovedi 30 Aprile</h2><div class="day-line"></div></div>
+
+<div class="reg">
+  <div class="reg-row" style="background:#f8f9fa"><span style="font-weight:700;color:#555">Panta Rei non gioca — osservazione avversarie</span></div>
+  <div class="reg-row"><span class="rk">17:00 <span class="pill u13" style="font-size:9px">U13</span></span><span>Consolini vs Malca — Misano C1 (~3 min)</span></div>
+  <div class="reg-row"><span class="rk">18:15 <span class="pill u15" style="font-size:9px">U15</span></span><span>Allianz Milano vs Malca — Misano C1 (~3 min)</span></div>
+  <div class="reg-row"><span class="rk">19:00 <span class="pill u17" style="font-size:9px">U17</span></span><span>Consolini vs PGS Omar — Pala Marignano SGM (~12 min)</span></div>
+</div>
+
+
+<!-- ══ VENERDI ══════════════════════════════════════════ -->
+<div class="day" style="margin-top:20px"><h2>Venerdi 1 Maggio — 1a Fase</h2><div class="day-line"></div></div>
+
+<!-- U15 09:00 -->
+<div class="mc">
+  <div class="mc-top">
+    <div class="mc-strip u15"></div>
+    <div class="mc-time"><span class="ora">09:00</span><span class="cat u15">U15</span></div>
+    <div class="mc-info">
+      <div class="mc-vs">ASD Cervasca vs <b>PANTA REI</b></div>
+      <div class="mc-detail"><b>Palestra Liceo Volta</b> — Viale Piacenza 28, Riccione<br>🚗 ~10 min dall'hotel</div>
+      <!-- RISULTATO: togli i commenti e scrivi il punteggio dopo la partita -->
+      <!-- <div class="mc-ris">2 - 0</div> -->
+    </div>
+  </div>
+  <!-- NOTA: togli i commenti e scrivi la nota (es. ritrovo, divisa, ecc.) -->
+  <!-- <div class="mc-nota-lib">&#9998; scrivi qui la tua nota</div> -->
+</div>
+
+<!-- U15 10:15 -->
+<div class="mc">
+  <div class="mc-top">
+    <div class="mc-strip u15"></div>
+    <div class="mc-time"><span class="ora">10:15</span><span class="cat u15">U15</span></div>
+    <div class="mc-info">
+      <div class="mc-vs"><b>PANTA REI</b> vs Consolini Volley</div>
+      <div class="mc-detail"><b>Palestra Liceo Volta</b> — Viale Piacenza 28, Riccione<br>🚗 ~10 min dall'hotel</div>
+      <!-- <div class="mc-ris">2 - 0</div> -->
+    </div>
+  </div>
+  <!-- <div class="mc-nota-lib">&#9998; scrivi qui la tua nota</div> -->
+</div>
+
+<!-- ALERT 11:30 -->
+<div class="alert danger">
+  <b>⛔ CONTEMPORANEA ALLE 11:30</b>
+  <span>U15 finisce ~11:30 a Riccione ↔ U13 inizia alle 11:30 a San Giovanni — Dividere il gruppo!</span>
+</div>
+
+<!-- U13 11:30 -->
+<div class="mc">
+  <div class="mc-top">
+    <div class="mc-strip u13"></div>
+    <div class="mc-time"><span class="ora">11:30</span><span class="cat u13">U13</span></div>
+    <div class="mc-info">
+      <div class="mc-vs">ASD Cervasca vs <b>PANTA REI</b></div>
+      <div class="mc-detail"><b>Pala Marignano</b> — Via Fornace Verni 70, San Giovanni M.<br>🚗 ~13 min dall'hotel</div>
+      <!-- <div class="mc-ris">2 - 0</div> -->
+    </div>
+  </div>
+  <!-- <div class="mc-nota-lib">&#9998; scrivi qui la tua nota</div> -->
+</div>
+
+<!-- TRANSFER -->
+<div class="tr warn">⚠ Spostamento stretto: Riccione → San Giovanni — 12-15 min — Partire SUBITO dopo la sirena!</div>
+
+<!-- U15 15:15 -->
+<div class="mc">
+  <div class="mc-top">
+    <div class="mc-strip u15"></div>
+    <div class="mc-time"><span class="ora">15:15</span><span class="cat u15">U15</span></div>
+    <div class="mc-info">
+      <div class="mc-vs">Muratori Vignola A vs <b>PANTA REI</b></div>
+      <div class="mc-detail"><b>Palestra Liceo Volta</b> — Viale Piacenza 28, Riccione<br>🚗 ~10 min dall'hotel</div>
+      <!-- <div class="mc-ris">2 - 0</div> -->
+    </div>
+  </div>
+  <!-- <div class="mc-nota-lib">&#9998; scrivi qui la tua nota</div> -->
+</div>
+
+<!-- TRANSFER OK -->
+<div class="tr ok">✓ Spostamento OK: Riccione → San Giovanni — 45 min di margine</div>
+
+<!-- U17 17:15 -->
+<div class="mc">
+  <div class="mc-top">
+    <div class="mc-strip u17"></div>
+    <div class="mc-time"><span class="ora">17:15</span><span class="cat u17">U17</span></div>
+    <div class="mc-info">
+      <div class="mc-vs"><b>PANTA REI</b> vs ASD L'Isola LC</div>
+      <div class="mc-detail"><b>Pala Marignano</b> — Via Fornace Verni 70, San Giovanni M.<br>🚗 ~13 min dall'hotel</div>
+      <!-- <div class="mc-ris">2 - 0</div> -->
+    </div>
+  </div>
+  <!-- <div class="mc-nota-lib">&#9998; scrivi qui la tua nota</div> -->
+</div>
+
+<!-- ALERT 18:30 -->
+<div class="alert danger">
+  <b>⛔ DOPPIA CONTEMPORANEA ALLE 18:30</b>
+  <span>U17 a Pala Marignano (SGM) ↔ U13 a Tensostruttura Misano — Due palestre diverse!</span>
+</div>
+
+<!-- U17 18:30 -->
+<div class="mc">
+  <div class="mc-top">
+    <div class="mc-strip u17"></div>
+    <div class="mc-time"><span class="ora">18:30</span><span class="cat u17">U17</span></div>
+    <div class="mc-info">
+      <div class="mc-vs">Consolini Volley vs <b>PANTA REI</b></div>
+      <div class="mc-detail"><b>Pala Marignano</b> — Via Fornace Verni 70, San Giovanni M.<br>🚗 ~13 min dall'hotel</div>
+      <!-- <div class="mc-ris">2 - 0</div> -->
+    </div>
+  </div>
+  <!-- <div class="mc-nota-lib">&#9998; scrivi qui la tua nota</div> -->
+</div>
+
+<!-- U13 18:30 -->
+<div class="mc">
+  <div class="mc-top">
+    <div class="mc-strip u13"></div>
+    <div class="mc-time"><span class="ora">18:30</span><span class="cat u13">U13</span></div>
+    <div class="mc-info">
+      <div class="mc-vs">Desio Volley vs <b>PANTA REI</b></div>
+      <div class="mc-detail"><b>Tensostruttura Pallone</b> — Via Rossini 8, Misano Adriatico<br>🚗 ~3 min dall'hotel</div>
+      <!-- <div class="mc-ris">2 - 0</div> -->
+    </div>
+  </div>
+  <!-- <div class="mc-nota-lib">&#9998; scrivi qui la tua nota</div> -->
+</div>
+
+
+<!-- ══ SABATO ════════════════════════════════════════════ -->
+<div class="day" style="margin-top:20px"><h2>Sabato 2 Maggio — 2a Fase</h2><div class="day-line"></div></div>
+
+<div class="tip">📝 Da compilare venerdi sera dopo i risultati del girone</div>
+
+<!-- ALERT possibile contemp -->
+<div class="alert warning">
+  <b>⚠ ATTENZIONE 10:15</b>
+  <span>Possibile U17 a Cattolica + U13 a SGM/Gabicce in contemporanea — Dividere gli accompagnatori</span>
+</div>
+
+<!-- U17 10:15 CERTA - unica gara certa del sabato -->
+<div class="mc">
+  <div class="mc-top">
+    <div class="mc-strip u17"></div>
+    <div class="mc-time"><span class="ora">10:15</span><span class="cat u17">U17</span></div>
+    <div class="mc-info">
+      <div class="mc-vs">PGS Omar vs <b>PANTA REI</b></div>
+      <div class="mc-detail"><b>Palasport Cattolica</b> — Via Salvo D'Acquisto 2, Cattolica<br>🚗 ~8 min dall'hotel — <b>GARA CERTA</b></div>
+      <!-- <div class="mc-ris">2 - 0</div> -->
+    </div>
+  </div>
+  <!-- <div class="mc-nota-lib">&#9998; scrivi qui la tua nota</div> -->
+</div>
+
+<!-- U17 FINALI - da compilare -->
+<div class="reg" style="margin-top:6px">
+  <div class="reg-hdr"><span class="pill u17">U17</span><span class="cat-name">Finali — Palasport Cattolica — ~8 min</span></div>
+  <div class="reg-row"><span class="rk">11:30</span><span style="color:#E65100;font-style:italic">Finale 3° posto — da compilare dopo venerdi</span></div>
+  <div class="reg-row"><span class="rk">15:30</span><span style="color:#E65100;font-style:italic">Finale 1° posto — da compilare dopo venerdi</span></div>
+</div>
+
+<!-- U13 FINALI - da compilare -->
+<div class="reg" style="margin-top:6px">
+  <div class="reg-hdr"><span class="pill u13">U13</span><span class="cat-name">Fase finale — da compilare dopo venerdi</span></div>
+  <div class="reg-row"><span class="rk">Mattina</span><span style="color:#E65100;font-style:italic">Quarto/Semifinale — SGM o Gabicce (~13 min)</span></div>
+  <div class="reg-row"><span class="rk">Pomeriggio</span><span style="color:#E65100;font-style:italic">Finale — Savioli Riccione (~10 min)</span></div>
+</div>
+
+<!-- U15 FINALI - da compilare -->
+<div class="reg" style="margin-top:6px">
+  <div class="reg-hdr"><span class="pill u15">U15</span><span class="cat-name">Fase finale — Gobetti Campo 2, Morciano (~18-20 min)</span></div>
+  <div class="reg-row"><span class="rk">Mattina</span><span style="color:#E65100;font-style:italic">Semifinale — da compilare dopo venerdi</span></div>
+  <div class="reg-row"><span class="rk">Pomeriggio</span><span style="color:#E65100;font-style:italic">Finale — da compilare dopo venerdi</span></div>
+  <div class="reg-row" style="background:#FFF3E0"><span style="font-size:11px;color:#E65100;font-weight:700">⚠ Palestra piu lontana — partire con 30 min di anticipo!</span></div>
+</div>
+
+
+<!-- ══ RIEPILOGO ═════════════════════════════════════════ -->
+<div class="day" style="margin-top:20px"><h2>Criticita</h2><div class="day-line"></div></div>
+
+<div class="summ">
+  <div class="sr d"><div class="sd">VEN 1/5</div><div class="st">⛔ 11:30 — Contemporanea</div><div class="sp">U13 a SGM + fine U15 a Riccione</div><div class="ss">→ 1 adulto parte da Riccione alle 11:10</div></div>
+  <div class="sr d"><div class="sd">VEN 1/5</div><div class="st">⛔ 18:30 — Contemporanea</div><div class="sp">U13 a Misano + U17 a SGM</div><div class="ss">→ Due gruppi separati (Misano a 3 min dall'hotel)</div></div>
+  <div class="sr w"><div class="sd">VEN 1/5</div><div class="st">⚠ 17:15-18:30 — U17 back to back</div><div class="sp">Due gare di fila nella stessa palestra</div><div class="ss">→ Gestire recupero fisico</div></div>
+  <div class="sr w"><div class="sd">SAB 2/5</div><div class="st">⚠ 10:15 — Possibile contemporanea</div><div class="sp">U17 Cattolica + U13 SGM/Gabicce</div><div class="ss">→ Dividere gli accompagnatori</div></div>
+  <div class="sr n"><div class="sd">SAB 2/5</div><div class="st">📍 U15 a Morciano</div><div class="sp">Palestra piu lontana: 18-20 min</div><div class="ss">→ Partire con 30 min di anticipo</div></div>
+</div>
+
+</div>
+
+<div class="footer">
+  Panta Rei ASD · Mirabilandia Volley Cup 2026<br>
+  Hotel Merano · Via G. Pascoli 4, Misano Adriatico
+</div>
+
+
+
+</body></html>
